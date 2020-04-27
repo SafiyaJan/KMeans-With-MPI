@@ -42,5 +42,7 @@ Running program
 - The following commands runs K-Means on a dataset of 100 points, 3 clusters, data from pointsGenerated.txt for 5 iterations
 ```mpiexec -f <Machinefile > -n <Number_of_processes > ./your_executable -t 100 -c 3 -i points_generated.txt -n 5```
 
-
+Analysis
+---------------
+- Various scalability studies were conducted on the sequential and parallel implementation of K-Means and the analysis for the studies is detailed in the ```Analysis.pdf``` document.
 
