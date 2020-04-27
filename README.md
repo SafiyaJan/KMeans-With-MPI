@@ -12,35 +12,25 @@ portable implementation of the MPI standard.
 - The clustering of the data was done over 4 Virtual Machines with different number of processes running on the machines
 
 
-
 Compilation
 -----------
-
-- To make 2D sequential, run command:
-	```make 2d_kmeans_seq```
-
-- To make 2D mpi, run command:
-	```make 2d_kmeans_mpi```
-
-- To make DNA sequential, run command:
-	```make dna_seq```
-
-- To make DNA mpi, run command:
-	```make dna_mpi```
+- To make 2D sequential, run command: ```make 2d_kmeans_seq```
+- To make 2D mpi, run command: ```make 2d_kmeans_mpi```
+- To make DNA sequential, run command: ```make dna_seq```
+- To make DNA mpi, run command: ```make dna_mpi```
 
 Point Generation
 ----------------
-
- - To generate 2D points, run command:
-	```sh kmeans.sh```
-
- - To generage DNA strands, run command:
-	```sh dna_kmeans.sh```
+- 2D Points Generator
+	- To generate 2D points, run command: ```sh kmeans.sh```
+	- You can alter the number of points & number of clusters you would like to generate, by changing the ```kmeans.sh``` file
+- DNA Strands Generator
+	- To generage DNA strands, run command: ```sh dna_kmeans.sh```
+	- You can alter the number of points, number of clusters and the length of the DNA strands you would like to generate, by changing the ```dna_kmeans.sh``` file
 
 
 Output file names 
 -----------------
-
 - 2D seq centroids - "2D_seq_finalcentroid.csv"
 - 2D mpi centroids - "2D_mpi_finalcentroid.csv"
 - DNA seq centroids - "DNA_seq_finalcentroid.csv"
@@ -48,7 +38,8 @@ Output file names
 
 Running program
 ---------------
-The following commands runs K-Means on a dataset of 100 points, 3 clusters, data from pointsGenerated.txt for 5 iterations
+- You will need to have access to 4 Virtual Machines in order to run the parallel implementation
+- The following commands runs K-Means on a dataset of 100 points, 3 clusters, data from pointsGenerated.txt for 5 iterations
 ```mpiexec -f <Machinefile > -n <Number_of_processes > ./your_executable -t 100 -c 3 -i points_generated.txt -n 5```
 
 
